@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 import { UserRound, Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,10 +20,11 @@ const Header = () => {
   }, []);
 
   const handleLogin = () => {
-    toast({
-      title: "Login Coming Soon",
-      description: "Our secure login system will be available soon!",
-    });
+    navigate('/login');
+  };
+
+  const handleCreditCard = () => {
+    navigate('/credit-card');
   };
 
   const handleFreeTrial = () => {
@@ -65,6 +68,13 @@ const Header = () => {
           <a href="#features" className="text-sm font-medium hover:text-bank-accent transition-colors">Features</a>
           <a href="#services" className="text-sm font-medium hover:text-bank-accent transition-colors">Services</a>
           <a href="#testimonials" className="text-sm font-medium hover:text-bank-accent transition-colors">Testimonials</a>
+          <Button 
+            variant="outline" 
+            className="text-sm font-medium" 
+            onClick={handleCreditCard}
+          >
+            Credit Card
+          </Button>
         </nav>
         
         <div className="hidden md:flex items-center gap-3">
@@ -91,6 +101,13 @@ const Header = () => {
             <a href="#features" className="text-sm font-medium hover:text-bank-accent transition-colors py-2">Features</a>
             <a href="#services" className="text-sm font-medium hover:text-bank-accent transition-colors py-2">Services</a>
             <a href="#testimonials" className="text-sm font-medium hover:text-bank-accent transition-colors py-2">Testimonials</a>
+            <Button 
+              variant="outline" 
+              className="text-sm font-medium w-full" 
+              onClick={handleCreditCard}
+            >
+              Credit Card
+            </Button>
             <hr className="my-2 border-gray-100" />
             <Button 
               variant="ghost" 
