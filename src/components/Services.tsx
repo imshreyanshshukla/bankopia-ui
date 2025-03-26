@@ -1,6 +1,6 @@
 
 import { useRef, useEffect } from "react";
-import { CreditCard, Wallet, BanknoteIcon, ArrowRight } from "lucide-react";
+import { CreditCard, Wallet, BanknoteIcon, ArrowRight, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
